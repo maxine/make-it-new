@@ -1,0 +1,20 @@
+{
+  "best_model": "all-text/training-output/best_model/model-21546", 
+  "best_valid_ppl": 3.690476655960083, 
+  "encoding": "utf-8", 
+  "latest_model": "all-text/training-output/save_model/model-51471", 
+  "params": {
+    "batch_size": 100, 
+    "dropout": 0.0, 
+    "embedding_size": 0, 
+    "hidden_size": 128, 
+    "input_dropout": 0.0, 
+    "learning_rate": 0.002, 
+    "max_grad_norm": 5.0, 
+    "model": "lstm", 
+    "num_layers": 2, 
+    "num_unrollings": 10, 
+    "vocab_size": 127
+  }, 
+  "vocab_file": "all-text/training-output/vocab.json"
+}
