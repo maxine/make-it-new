@@ -1,8 +1,5 @@
 from flask import Flask, redirect, render_template, request
 
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
-
 import codecs
 import json
 import os
@@ -17,9 +14,15 @@ class Args:
     init_dir='all-text/training-output'
     temperature=0.5
     start_text='Love and Art in the 1920s reads like: '
+    model_path=''
+    length=300
+    max_prob=False
+    seed=-1
+    evaluate=False
+
 
 @app.route('/')
-def hello_world():
+def home():
     return render_template('homepage.html')
 
 @app.route('/make_it_new', methods=['GET', 'POST'])
@@ -60,31 +63,6 @@ def make_it_new():
                                         vocab_index_dict, index_vocab_dict,
                                         temperature=args.temperature,
                                         max_prob=args.max_prob)
-    # print('Sampled text is:\n%s' % sample)
-    return sample
-
-    # result = json.load(tensorflow-char-rnn/all-text/training-output/result.json)
-
-
-    # Create a Cloud Natural Language client
-    # client = language.LanguageServiceClient()
-    #
-    # # Retrieve inputted text from the form and create document object
-    # text = request.form['text']
-    # document = types.Document(content=text, type=enums.Document.Type.PLAIN_TEXT)
-    #
-    # # Retrieve response from Natural Language API's analyze_entities() method
-    # response = client.analyze_entities(document)
-    # entities = response.entities
-    #
-    # # Retrieve response from Natural Language API's analyze_sentiment() method
-    # response = client.analyze_sentiment(document)
-    # sentiment = response.document_sentiment
-    #
-    # # Return a Jinja2 HTML template of the homepage and pass the 'text', 'entities',
-    # # and 'sentiment' variables to the frontend. These contain information retrieved
-    # # from the Natural Language API.
-    # return render_template('homepage.html', text=text, entities=entities, sentiment=sentiment)
     return render_template('homepage.html', text=sample)
 
 @app.errorhandler(500)
