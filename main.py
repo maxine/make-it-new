@@ -11,14 +11,16 @@ from train import load_vocab
 app = Flask(__name__)
 
 class Args:
-    init_dir='all-text/training-output'
-    temperature=0.5
-    start_text='Love and Art in the 1920s reads like: '
-    model_path=''
-    length=300
-    max_prob=False
-    seed=-1
-    evaluate=False
+    def __init__(self, temperature=0.5, title='Love and Art in the 1920s reads like: ', length=300):
+        self.init_dir='all-text/training-output'
+        self.temperature=float(temperature)
+        self.start_text=' '
+        self.title=str(title)
+        self.model_path=''
+        self.length=int(length)
+        self.max_prob=False
+        self.seed=-1
+        self.evaluate=False
 
 
 @app.route('/')
@@ -27,8 +29,18 @@ def home():
 
 @app.route('/make_it_new', methods=['GET', 'POST'])
 def make_it_new():
-    text = request.form['text']
-    args = Args()
+    temperature = request.form.get('temperature', False)
+    title = request.form.get('title', False)
+    length = request.form.get('length', False)
+
+    if not temperature:
+        temperature=0.5
+    if not title:
+        title='A New Creation'
+    if not length:
+        length=100
+
+    args = Args(temperature, title, length)
 
     with open(os.path.join(args.init_dir, 'result.json'), 'r') as f:
         result = json.load(f)
@@ -59,11 +71,11 @@ def make_it_new():
     # Sampling a sequence
     with tf.Session(graph=graph) as session:
         saver.restore(session, best_model)
-        sample = test_model.sample_seq(session, args.length, args.start_text,
+        sample = test_model.sample_seq(session, (10*args.length), args.start_text,
                                         vocab_index_dict, index_vocab_dict,
                                         temperature=args.temperature,
                                         max_prob=args.max_prob)
-    return render_template('homepage.html', text=sample)
+    return render_template('textpage.html', text=sample, title=title)
 
 @app.errorhandler(500)
 def server_error(e):

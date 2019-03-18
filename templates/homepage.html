@@ -1,9 +1,72 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Make it New</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+  </head>
+
   <body>
-    <form action="make_it_new" method="POST" enctype="multipart/form-data">
-      Text: <input type="text" name="text"><br>
-      <input type="submit" name="submit" value="Submit">
-    </form>
-    <p> ok here we go {{text}}</p>
+    <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="mt-5">Make it New</h1>
+          <p><em>a little explainer with a link to learn more.</em></p>
+          <form action="make_it_new" method="POST" enctype="multipart/form-data" class="form-elem-container">
+              <div class="form-group">
+                <label for="title">Give your creation a title</label>
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  name="title"
+                  id="title"
+                  placeholder="A New Creation">
+              </div>
+              <div class="number-input-container">
+                <div class="form-group flex-group">
+                  <label for="temperature">How random should it be?</label>
+                  <input
+                    type="number"
+                    min="0.01"
+                    max="5"
+                    step="0.01"
+                    class="form-control form-control-sm"
+                    name="temperature"
+                    id="temperature"
+                    placeholder="0.5">
+                </div>
+                <div class="form-group flex-group">
+                  <label for="length">How many words should it be?</label>
+                  <input
+                    type="number"
+                    step="1"
+                    class="form-control form-control-sm"
+                    name="length"
+                    id="length"
+                    placeholder="300">
+                </div>
+              </div>
+              <button type="submit" name="submit" class="btn btn-secondary submit-btn">Create</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

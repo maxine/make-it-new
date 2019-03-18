@@ -1,0 +1,38 @@
+body {
+  background-color: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+p, h1 {
+  color: black;
+}
+
+label {
+  color: #9d9d9d;
+}
+
+.form-elem-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+}
+
+.number-input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex-group {
+  max-width: 50%;
+  padding-right: 4%;
+  white-space: nowrap;
+}
+
+.submit-btn {
+  max-width: 25%;
+}
