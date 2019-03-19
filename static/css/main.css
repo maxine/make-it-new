@@ -1,17 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 body {
-  background-color: white;
+  background-color: #f7f2ee;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
 }
 
-p, h1 {
+h1, p {
   color: black;
 }
 
+h1 {
+  font-family: 'Xerox Serif Wide', serif;
+  letter-spacing: -0.07em;
+  line-height: 3rem;
+  font-size: 4rem;
+}
+
+h3.title {
+  margin-bottom: 0.5em;
+  font-family: 'Xerox Serif Wide', serif;
+  letter-spacing: -0.07em;
+  line-height: 1.5rem;
+  font-size: 2rem;
+  color: darkgray;
+}
+
+p {
+  /* font-family: 'Lato', sans-serif; */
+  font-size: 1.5em;
+  font-family: -webkit-pictograph;
+  color: #282828;
+  line-height: 1.4em;
+  letter-spacing: -0.03em;
+}
+
+p.explainer {
+  font-style: italic;
+  font-size: 1.3em;
+  margin-bottom: 2em;
+}
+
+p.textpage {
+  margin-bottom: 3em;
+}
+
+a {
+  text-decoration: underline;
+}
+
+a.no-style {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.make-it-new {
+  color: black;
+  /* border-bottom: none !important; */
+  animation: colorchange 2s steps(1);
+  animation-iteration-count:infinite;
+  cursor: default;
+}
+
+@keyframes colorchange
+    {
+      0%   {color: black;}
+      50%  {color: black;
+            font-style:normal;
+            text-decoration: line-through;}
+      75%   {color: #f7f2ee}
+    }
+
+/* p {
+  font-family: 'MS Gothic 5', sans-serif;
+  line-height: 1.75rem;
+} */
+
 label {
-  color: #9d9d9d;
+  color: #454545;
+  font-weight: 100;
+  font-style: italic;
+  font-size: .9em;
+  margin-bottom: 0px;
+}
+
+input[type=text], input[type=number] {
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: #f7f2ee;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #454545;
+  font-weight: 100;
+  font-size: .7em;
+
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #454545;
+  font-weight: 100;
+  font-size: .7em;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #454545;
+  font-weight: 100;
+  font-size: .7em;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #454545;
+  font-weight: 100;
+  font-size: .7em;
+}
+::placeholder {
+  color: #454545;
+  font-weight: 100;
+  font-size: .7em;
 }
 
 .form-elem-container {
@@ -19,20 +125,43 @@ label {
   flex-direction: column;
   justify-content: left;
   align-items: left;
+  max-width: 600px;
+}
+
+.txt-elem-container {
+  margin-right: 6%;
+  margin-bottom: 100px;
 }
 
 .number-input-container {
   display: flex;
   flex-direction: row;
   align-items: center;
+  max-width: 600px;
 }
 
 .flex-group {
   max-width: 50%;
-  padding-right: 4%;
-  white-space: nowrap;
+  padding-right: 6%;
 }
 
-.submit-btn {
+.options-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.txt-page-btn {
+  background-color: black;
+  border-color: black;
+  padding-right: 6%;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.make-it-new-btn {
+  background-color: black;
+  border-color: black;
+  font-weight: lighter;
+  margin-top: 1em;
   max-width: 25%;
 }

@@ -71,7 +71,7 @@ def make_it_new():
     # Sampling a sequence
     with tf.Session(graph=graph) as session:
         saver.restore(session, best_model)
-        sample = test_model.sample_seq(session, (10*args.length), args.start_text,
+        sample = test_model.sample_seq(session, (5*args.length), args.start_text,
                                         vocab_index_dict, index_vocab_dict,
                                         temperature=args.temperature,
                                         max_prob=args.max_prob)

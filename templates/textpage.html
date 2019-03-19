@@ -22,20 +22,22 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
-          <h1 class="mt-5">Make it New</h1>
-          <p><em>a little explainer with a link to learn more.</em></p>
-          <h3> {{title}} </h3>
+          <h1 class="mt-5"><a class="no-style" href="/">Make it New</a></h1>
+          <p class="explainer">Create new work from class text. <a href="/about">Learn more</a>.</p>
+          <h3 class="title"> {{title}} </h3>
           <p> {{text}} </p>
-          <form action="/" enctype="multipart/form-data" class="form-elem-container">
-            <button class="btn btn-secondary" type="submit" action="home">
-              Create my own
-            </button>
-          </form>
-          <form action="/make_it_new" method="POST" class="form-elem-container">
-            <button class="btn btn-secondary" action="/" type="submit" name="submit">
-              Surprise me
-            </button>
-          </form>
+          <div class="options-container">
+            <form action="/" enctype="multipart/form-data" class="form-elem-container txt-elem-container">
+              <button class="btn btn-secondary txt-page-btn" type="submit" action="home">
+                Create my own
+              </button>
+            </form>
+            <form action="/make_it_new" method="POST" class="form-elem-container txt-elem-container">
+              <button class="btn btn-secondary txt-page-btn" action="/" type="submit" name="submit">
+                Surprise me
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
