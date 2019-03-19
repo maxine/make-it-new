@@ -6,6 +6,7 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  padding-bottom: 50px;
 }
 
 h1, p {
@@ -26,6 +27,10 @@ h3.title {
   line-height: 1.5rem;
   font-size: 2rem;
   color: darkgray;
+}
+
+.about {
+  margin-top: 1.5em;
 }
 
 p {

@@ -27,6 +27,14 @@ class Args:
 def home():
     return render_template('homepage.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/works_cited')
+def works_cited():
+    return render_template('works-cited.html')
+
 @app.route('/make_it_new', methods=['GET', 'POST'])
 def make_it_new():
     temperature = request.form.get('temperature', False)

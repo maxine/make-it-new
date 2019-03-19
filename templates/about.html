@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Make it New</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+  </head>
+
+  <body>
+    <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="mt-5"><a class="no-style" href="/">Make it New</a></h1>
+          <p class="explainer">Create new work from class text. <a href="/">Go back</a>.</p>
+
+          <p>As we learned in class, the 1920s were a time of recalibration and redefinition in response to the Great War. Artists and writers questioned the purpose of their crafts and created new forms to express changed identities and understandings. As world events continue to shift perceptions, art will shift as well.</p>
+
+          <p>To reflect the nature of evolution of art and the use of old concepts to make new work, I trained a recurrent neural network to create new text out of the text from our class readings. See the entire list of included texts below.</p>
+
+          <h3 class="title about">More on neural networks:</h3>
+          <p>At a high level, artificial neural networks are frameworks for processing information based off of the biological neural networks in human and animal brains.</p>
+
+          <p>Feedforward neural networks were the first type of artificial neural networks. Connections between different parts &ndash; nodes &ndash; of the neural network are unidirectional, that is, information never flows backwards. Each node, also known as a neuron or perceptron, receives inputs from other nodes in the neural net or an external source. The node also receives a weight associated with each input, where the weight indicates one input's importance relative to the other inputs. The neuron applies a function, or some sort of computation, on the inputs and their associated weights and produces some output that will be passed to other nodes. </p>
+
+          <p>Recurrent neural networks (RNNs) are a specific type of artificial neural networks. They are particularly powerful because they allow outputs from nodes to loop &quot;backward&quot; in the neural network to previous nodes. This gives a recurrent neural network a memory of sorts, where an output's state can continuously change. So while RNNs still take in an input and return an output, the output's contents &quot;are influenced not only by the input you just fed in, but also on the entire history of inputs you&rsquo;ve fed in in the past&quot; (Karpathy).</p>
+
+          <p>Finally, character-level recurrent neural networks, known as char-RNNs, take in a vast amount of textual data and &quot;model the probability distribution of the next character in the sequence given a sequence of previous characters. This will then allow us to generate new text one character at a time&quot; (Karpathy). Because RNNs allow information to loop &quot;backward,&quot; the best character for a given spot can be computed in the context of the characters that come before it, which is what allows char-RNNs to create meaningful text.</p>
+
+          <h3 class="title about">More on the process:</h3>
+          <p>I ran open-source code to train char-RNN on a 250,000 word corpus over three hours. In other words, I inputted nearly 250,000 words into a program and let that program run for three hours to create a char-RNN, or a model that understands the patterns of the language inputted and can reproduce those patterns on new inputted text in the future. I ran the program using TensorFlow, a tool created by Google for large-scale machine learning.</p>
+
+          <h3 class="title about">More on how to use this: </h3>
+          <p>To see the model in action, title your new work, add some &quot;temperature&quot; value between 0.01 and 5 to control the randomness of the output, and pick the number of characters you want outputted. </p>
+
+          <h3 class="title about">Texts used:*</h3>
+          <p>"II" - E.E. Cummings</p>
+          <p>"VIII" - E.E. Cummings</p>
+          <p>"XIX" - E.E. Cummings</p>
+          <p>"XVIII" - E.E. Cummings</p>
+          <p>"24" - E.E. Cummings</p>
+          <p>"54" - E.E. Cummings</p>
+          <p>"55" - E.E. Cummings</p>
+          <p>"A Foreword to Krazy" - E.E. Cummings</p>
+          <p>"The Waste Land" - T.S. Eliot</p>
+          <p>"Plum Bun" - Jessie Redmon Fauset</p>
+          <p>"Echoes of the Jazz Age" - F. Scott Fitzgerald</p>
+          <p>"The Great Gatsby" - F. Scott Fitzgerald</p>
+          <p>"In Our Time" - Ernest Hemingway</p>
+          <p>"The Sun Also Rises" - Ernest Hemingway</p>
+          <p>"Mehitabel and Her Kittens" - Don Marquis</p>
+          <p>"The 'Vulgar' Comic Strip" - Gilbert Seldes</p>
+          <p>"The Krazy Kat That Walks By Himself" - Gilbert Seldes</p>
+          <p><em>
+          *Most notably, Manhattan Transfer did not make it into this dataset. I was not able to remove typographical errors from the text of this book that were introduced in its digitization.
+          </em></p>
+
+
+
+          <h3 class="title about">Works cited</h3>
+            <p class="explainer"><a href="/works_cited">See here</a>.</p>
+
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
