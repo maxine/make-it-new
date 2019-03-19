@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
 
 body {
   background-color: #f7f2ee;
@@ -34,17 +34,16 @@ h3.title {
 }
 
 p {
-  /* font-family: 'Lato', sans-serif; */
-  font-size: 1.5em;
-  font-family: -webkit-pictograph;
+  font-size: 1.1em;
+  font-family: 'Montserrat', sans-serif;
   color: #282828;
-  line-height: 1.4em;
+  line-height: 1.5em;
   letter-spacing: -0.03em;
 }
 
 p.explainer {
   font-style: italic;
-  font-size: 1.3em;
+  font-size: 1em;
   margin-bottom: 2em;
 }
 

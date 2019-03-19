@@ -1,11 +1,9 @@
 # make-it-new
 
 ### About
-Live link: TKTK
-
 Used [tensorflow-char-rnn](https://github.com/Andercxt/tensorflow-char-rnn) to train the model.
 
-See Works Cited LINK TKTK for included texts.
+See [Works Cited](http://make-it-new.herokuapp.com/works_cited) for included texts.
 
 ### To run
 ```
